@@ -17,6 +17,8 @@
 		DF818B5D21759987007AFCAA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF818B5C21759987007AFCAA /* OpenGL.framework */; };
 		DF818B61217599C8007AFCAA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = DF818B60217599C8007AFCAA /* glad.c */; };
 		DF818B63217599D2007AFCAA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF818B62217599D2007AFCAA /* main.cpp */; };
+		DF818B6621760B81007AFCAA /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF818B6421760B81007AFCAA /* Triangle.cpp */; };
+		DF818B6921761468007AFCAA /* glm in Resources */ = {isa = PBXBuildFile; fileRef = DF818B6821761467007AFCAA /* glm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		DF818B5C21759987007AFCAA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		DF818B60217599C8007AFCAA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		DF818B62217599D2007AFCAA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DF818B6421760B81007AFCAA /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		DF818B6721760C15007AFCAA /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		DF818B6821761467007AFCAA /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = glm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,8 @@
 		DF818B24217596DD007AFCAA /* OpenGLPractice */ = {
 			isa = PBXGroup;
 			children = (
+				DF818B6821761467007AFCAA /* glm */,
+				DF818B6721760C15007AFCAA /* Triangle.h */,
 				DF818B60217599C8007AFCAA /* glad.c */,
 				DF818B552175978F007AFCAA /* include */,
 				DF818B2B217596DE007AFCAA /* Assets.xcassets */,
@@ -115,6 +122,7 @@
 				DF818B30217596DE007AFCAA /* Info.plist */,
 				DF818B33217596DE007AFCAA /* OpenGLPractice.entitlements */,
 				DF818B62217599D2007AFCAA /* main.cpp */,
+				DF818B6421760B81007AFCAA /* Triangle.cpp */,
 			);
 			path = OpenGLPractice;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				DF818B562175978F007AFCAA /* include in Resources */,
 				DF818B2C217596DE007AFCAA /* Assets.xcassets in Resources */,
 				DF818B2F217596DE007AFCAA /* Main.storyboard in Resources */,
+				DF818B6921761468007AFCAA /* glm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF818B63217599D2007AFCAA /* main.cpp in Sources */,
+				DF818B6621760B81007AFCAA /* Triangle.cpp in Sources */,
 				DF818B61217599C8007AFCAA /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +461,7 @@
 					/usr/local/Cellar/glew/2.1.0/lib,
 					/usr/local/Cellar/glfw/3.2.1/include,
 					/usr/local/Cellar/glew/2.1.0/include,
+					"$(PROJECT_DIR)/OpenGLPractice/glm",
 				);
 				INFOPLIST_FILE = OpenGLPractice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -481,6 +492,7 @@
 					/usr/local/Cellar/glew/2.1.0/lib,
 					/usr/local/Cellar/glfw/3.2.1/include,
 					/usr/local/Cellar/glew/2.1.0/include,
+					"$(PROJECT_DIR)/OpenGLPractice/glm",
 				);
 				INFOPLIST_FILE = OpenGLPractice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
