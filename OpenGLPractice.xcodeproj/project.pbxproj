@@ -17,8 +17,8 @@
 		DF818B5D21759987007AFCAA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF818B5C21759987007AFCAA /* OpenGL.framework */; };
 		DF818B61217599C8007AFCAA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = DF818B60217599C8007AFCAA /* glad.c */; };
 		DF818B63217599D2007AFCAA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF818B62217599D2007AFCAA /* main.cpp */; };
-		DF818B6621760B81007AFCAA /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF818B6421760B81007AFCAA /* Triangle.cpp */; };
 		DF818B6921761468007AFCAA /* glm in Resources */ = {isa = PBXBuildFile; fileRef = DF818B6821761467007AFCAA /* glm */; };
+		DFB4EA912177094800810D83 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFB4EA902177094800810D83 /* Triangle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +56,9 @@
 		DF818B5C21759987007AFCAA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		DF818B60217599C8007AFCAA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		DF818B62217599D2007AFCAA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		DF818B6421760B81007AFCAA /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
 		DF818B6721760C15007AFCAA /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		DF818B6821761467007AFCAA /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = glm; sourceTree = "<group>"; };
+		DFB4EA902177094800810D83 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,9 @@
 		DF818B24217596DD007AFCAA /* OpenGLPractice */ = {
 			isa = PBXGroup;
 			children = (
-				DF818B6821761467007AFCAA /* glm */,
 				DF818B6721760C15007AFCAA /* Triangle.h */,
+				DFB4EA902177094800810D83 /* Triangle.cpp */,
+				DF818B6821761467007AFCAA /* glm */,
 				DF818B60217599C8007AFCAA /* glad.c */,
 				DF818B552175978F007AFCAA /* include */,
 				DF818B2B217596DE007AFCAA /* Assets.xcassets */,
@@ -122,7 +123,6 @@
 				DF818B30217596DE007AFCAA /* Info.plist */,
 				DF818B33217596DE007AFCAA /* OpenGLPractice.entitlements */,
 				DF818B62217599D2007AFCAA /* main.cpp */,
-				DF818B6421760B81007AFCAA /* Triangle.cpp */,
 			);
 			path = OpenGLPractice;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF818B63217599D2007AFCAA /* main.cpp in Sources */,
-				DF818B6621760B81007AFCAA /* Triangle.cpp in Sources */,
+				DFB4EA912177094800810D83 /* Triangle.cpp in Sources */,
 				DF818B61217599C8007AFCAA /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
