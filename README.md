@@ -1,2 +1,2 @@
 # OpenGL
-OpenGL or OpenGL ES
+OpenGL for mac
