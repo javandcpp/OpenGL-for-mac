@@ -10,20 +10,9 @@
 
 int main(int argc, char **argv){
     using namespace std;
-//    Triangle tr;
-//    tr.draw();
-    
-    glm::mat4 trans;
-    for (int i = 0; i < 4; ++i)
-    {
-        cout << trans[i].x << " " << trans[i].y << " " << trans[i].z << " " << trans[i].w << endl;
-    }
-    trans = glm::rotate(trans, 30.0f, glm::vec3(0.0f, 1.0f, 0.0f));
-    cout << endl;
-    for (int i = 0; i < 4; ++i)
-    {
-        cout << trans[i].x << " " << trans[i].y << " " << trans[i].z << " " << trans[i].w << endl;
-    }
+    Triangle tr;
+    tr.draw();
+
     return 0;
 }
 

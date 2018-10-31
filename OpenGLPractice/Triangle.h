@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <OpenGL/gl.h>
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
@@ -22,7 +23,7 @@ static const char *vertexShaderSource="#version 330 core \n"
 "layout (location = 0) in vec3 aPos;\n"
 "uniform mat4 transform;\n"
 "void main(){\n"
-"gl_Position=transform * vec4(aPos,1.0);\n"
+"gl_Position=vec4(aPos,1.0);\n"
 "}\0";
 
 
