@@ -131,7 +131,7 @@ void Triangle::draw(){
         //        当程序退出的时候 使用一个自定义的颜色清空屏幕  在每个新的渲染迭代可是的时候我们总希望清屏否则总是看到上次渲染的结果。
         //        我们可以使用glClear   GL_COLOR_BUFFER_BIT，GL_DEPTH_BUFFER_BIT和GL_STENCIL_BUFFER_BIT。 我们清空颜色 。
         //        glClearColor(0.5f, 0.1f, 0.0f, 1.0f);
-        glClearColor(0.0f,0.0f,0.0f,1.0f);
+       glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
         //glRotatef(30,0,1,0);
