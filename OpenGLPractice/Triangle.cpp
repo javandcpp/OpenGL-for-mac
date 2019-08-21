@@ -21,11 +21,11 @@ void Triangle::draw(){
     glfwInit();
     //    主版本
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    //    次版本
+//    //    次版本
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    //    告诉glfw 我们使用的是core_profile 核心模块
+//    //    告诉glfw 我们使用的是core_profile 核心模块
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    //    向前兼容
+//    //    向前兼容
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     //    创建一个GLFW 窗口   宽 高  窗口名字  后边两个暂时不用管
     GLFWwindow* window = glfwCreateWindow(400, 200, "LearnOpenGL", NULL, NULL);
@@ -130,7 +130,7 @@ void Triangle::draw(){
         //        glfwSwapBuffers 会交换颜色缓冲（他是存储着GLFW 窗口每一个像素色值的大缓冲），将会作为输出显示在屏幕上
         //        当程序退出的时候 使用一个自定义的颜色清空屏幕  在每个新的渲染迭代可是的时候我们总希望清屏否则总是看到上次渲染的结果。
         //        我们可以使用glClear   GL_COLOR_BUFFER_BIT，GL_DEPTH_BUFFER_BIT和GL_STENCIL_BUFFER_BIT。 我们清空颜色 。
-        //        glClearColor(0.5f, 0.1f, 0.0f, 1.0f);
+//                glClearColor(0.5f, 0.1f, 0.0f, 1.0f);
        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
