@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF20D1C3230E3D3C00B5D758 /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF20D1C1230E3D3C00B5D758 /* Square.cpp */; };
+		DF20D1C6230E988800B5D758 /* TestSquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF20D1C4230E988800B5D758 /* TestSquare.cpp */; };
 		DF818B2C217596DE007AFCAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF818B2B217596DE007AFCAA /* Assets.xcassets */; };
 		DF818B2F217596DE007AFCAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF818B2D217596DE007AFCAA /* Main.storyboard */; };
 		DF818B3D217596DE007AFCAA /* OpenGLPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF818B3C217596DE007AFCAA /* OpenGLPracticeTests.m */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF20D1C1230E3D3C00B5D758 /* Square.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; };
+		DF20D1C2230E3D3C00B5D758 /* Square.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Square.hpp; sourceTree = "<group>"; };
+		DF20D1C4230E988800B5D758 /* TestSquare.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestSquare.cpp; sourceTree = "<group>"; };
+		DF20D1C5230E988800B5D758 /* TestSquare.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TestSquare.hpp; sourceTree = "<group>"; };
 		DF818B22217596DD007AFCAA /* OpenGLPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF818B2B217596DE007AFCAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF818B2E217596DE007AFCAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +129,10 @@
 				DF818B30217596DE007AFCAA /* Info.plist */,
 				DF818B33217596DE007AFCAA /* OpenGLPractice.entitlements */,
 				DF818B62217599D2007AFCAA /* main.cpp */,
+				DF20D1C1230E3D3C00B5D758 /* Square.cpp */,
+				DF20D1C2230E3D3C00B5D758 /* Square.hpp */,
+				DF20D1C4230E988800B5D758 /* TestSquare.cpp */,
+				DF20D1C5230E988800B5D758 /* TestSquare.hpp */,
 			);
 			path = OpenGLPractice;
 			sourceTree = "<group>";
@@ -286,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF20D1C3230E3D3C00B5D758 /* Square.cpp in Sources */,
+				DF20D1C6230E988800B5D758 /* TestSquare.cpp in Sources */,
 				DF818B63217599D2007AFCAA /* main.cpp in Sources */,
 				DFB4EA912177094800810D83 /* Triangle.cpp in Sources */,
 				DF818B61217599C8007AFCAA /* glad.c in Sources */,

@@ -7,12 +7,18 @@
 //
 
 #include "Triangle.h"
+#include "Square.hpp"
+#include "TestSquare.hpp"
 
 int main(int argc, char **argv){
     using namespace std;
-    Triangle tr;
-    tr.draw();
-
+//    Triangle tr;
+//    tr.draw();
+    
+//    Square square;
+//    square.draw();
+    TestSquare testSqr;
+    testSqr.draw();
     return 0;
 }
 

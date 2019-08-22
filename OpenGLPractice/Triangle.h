@@ -20,11 +20,11 @@
 #define GETSHADER(x) #x
 
 static const char *vertexShaderSource="#version 330 core \n"
-"layout (location = 0) in vec4 aPos;\n"
+"layout (location = 0) in vec4 position;\n"
 "uniform mat4 transform;\n"
 "out vec4 vertexColor;\n"  //输出
 "void main(){\n"
-"gl_Position=aPos;\n"
+"gl_Position=position;\n"
 "vertexColor=vec4(1.0f, 0.5f, 0.2f, 0.0f);\n"
 "}\0";
 
