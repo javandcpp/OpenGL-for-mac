@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DF20D1C3230E3D3C00B5D758 /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF20D1C1230E3D3C00B5D758 /* Square.cpp */; };
 		DF20D1C6230E988800B5D758 /* TestSquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF20D1C4230E988800B5D758 /* TestSquare.cpp */; };
+		DF410343230FC313005C92FD /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF410342230FC313005C92FD /* container.jpg */; };
+		DF410346230FD141005C92FD /* wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF410344230FD141005C92FD /* wall.jpg */; };
+		DF410347230FD141005C92FD /* awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = DF410345230FD141005C92FD /* awesomeface.png */; };
+		DF41034B230FD904005C92FD /* kaishu_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF41034A230FD904005C92FD /* kaishu_logo.jpg */; };
 		DF818B2C217596DE007AFCAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF818B2B217596DE007AFCAA /* Assets.xcassets */; };
 		DF818B2F217596DE007AFCAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF818B2D217596DE007AFCAA /* Main.storyboard */; };
 		DF818B3D217596DE007AFCAA /* OpenGLPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF818B3C217596DE007AFCAA /* OpenGLPracticeTests.m */; };
@@ -45,6 +49,11 @@
 		DF20D1C2230E3D3C00B5D758 /* Square.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Square.hpp; sourceTree = "<group>"; };
 		DF20D1C4230E988800B5D758 /* TestSquare.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestSquare.cpp; sourceTree = "<group>"; };
 		DF20D1C5230E988800B5D758 /* TestSquare.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TestSquare.hpp; sourceTree = "<group>"; };
+		DF410341230FC267005C92FD /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		DF410342230FC313005C92FD /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		DF410344230FD141005C92FD /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
+		DF410345230FD141005C92FD /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
+		DF41034A230FD904005C92FD /* kaishu_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kaishu_logo.jpg; sourceTree = "<group>"; };
 		DF818B22217596DD007AFCAA /* OpenGLPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF818B2B217596DE007AFCAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF818B2E217596DE007AFCAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +128,11 @@
 		DF818B24217596DD007AFCAA /* OpenGLPractice */ = {
 			isa = PBXGroup;
 			children = (
+				DF41034A230FD904005C92FD /* kaishu_logo.jpg */,
+				DF410345230FD141005C92FD /* awesomeface.png */,
+				DF410344230FD141005C92FD /* wall.jpg */,
+				DF410342230FC313005C92FD /* container.jpg */,
+				DF410341230FC267005C92FD /* stb_image.h */,
 				DF818B6721760C15007AFCAA /* Triangle.h */,
 				DFB4EA902177094800810D83 /* Triangle.cpp */,
 				DF818B6821761467007AFCAA /* glm */,
@@ -269,9 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF818B562175978F007AFCAA /* include in Resources */,
+				DF410346230FD141005C92FD /* wall.jpg in Resources */,
 				DF818B2C217596DE007AFCAA /* Assets.xcassets in Resources */,
 				DF818B2F217596DE007AFCAA /* Main.storyboard in Resources */,
+				DF410343230FC313005C92FD /* container.jpg in Resources */,
+				DF41034B230FD904005C92FD /* kaishu_logo.jpg in Resources */,
 				DF818B6921761468007AFCAA /* glm in Resources */,
+				DF410347230FD141005C92FD /* awesomeface.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
