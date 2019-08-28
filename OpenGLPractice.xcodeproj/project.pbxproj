@@ -25,6 +25,7 @@
 		DF818B63217599D2007AFCAA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF818B62217599D2007AFCAA /* main.cpp */; };
 		DF818B6921761468007AFCAA /* glm in Resources */ = {isa = PBXBuildFile; fileRef = DF818B6821761467007AFCAA /* glm */; };
 		DFB4EA912177094800810D83 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFB4EA902177094800810D83 /* Triangle.cpp */; };
+		DFD02881231678E800A04A4D /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFD0287F231678E800A04A4D /* Light.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		DF818B6721760C15007AFCAA /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		DF818B6821761467007AFCAA /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = glm; sourceTree = "<group>"; };
 		DFB4EA902177094800810D83 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		DFD0287F231678E800A04A4D /* Light.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		DFD02880231678E800A04A4D /* Light.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				DF20D1C2230E3D3C00B5D758 /* Square.hpp */,
 				DF20D1C4230E988800B5D758 /* TestSquare.cpp */,
 				DF20D1C5230E988800B5D758 /* TestSquare.hpp */,
+				DFD0287F231678E800A04A4D /* Light.cpp */,
+				DFD02880231678E800A04A4D /* Light.hpp */,
 			);
 			path = OpenGLPractice;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFD02881231678E800A04A4D /* Light.cpp in Sources */,
 				DF20D1C3230E3D3C00B5D758 /* Square.cpp in Sources */,
 				DF20D1C6230E988800B5D758 /* TestSquare.cpp in Sources */,
 				DF818B63217599D2007AFCAA /* main.cpp in Sources */,

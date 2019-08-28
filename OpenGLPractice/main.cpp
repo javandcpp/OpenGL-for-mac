@@ -6,9 +6,12 @@
 //  Copyright © 2018 developer. All rights reserved.
 //
 
-#include "Triangle.h"
-#include "Square.hpp"
+
+
+//#include "Triangle.h"
+//#include "Square.hpp"
 #include "TestSquare.hpp"
+#include "Light.hpp"
 
 int main(int argc, char **argv){
     using namespace std;
@@ -17,8 +20,12 @@ int main(int argc, char **argv){
     
 //    Square square;
 //    square.draw();
-    TestSquare testSqr;
-    testSqr.draw();
+//    TestSquare testSqr;
+//    testSqr.draw();
+    
+    Light light;
+    light.draw();
+    
     return 0;
 }
 

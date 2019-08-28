@@ -1,13 +1,15 @@
 //
-//  TestSquare.hpp
+//  Light.hpp
 //  OpenGLPractice
 //
-//  Created by developer on 2019/8/22.
+//  Created by developer on 2019/8/28.
 //  Copyright © 2019 developer. All rights reserved.
 //
 
-#ifndef TestSquare_hpp
-#define TestSquare_hpp
+#ifndef Light_hpp
+#define Light_hpp
+
+#include <stdio.h>
 
 #include <stdio.h>
 
@@ -24,7 +26,7 @@
 
 
 
-static const char *VertexShaderSource="#version 330 core \n"
+static const char *LightVertexShaderSource="#version 330 core \n"
 "layout (location=0) in vec3 aPos; \n"
 "layout (location = 1) in vec3 aColor; \n"
 "layout (location = 2) in vec2 aTexCoord; \n"
@@ -40,7 +42,7 @@ static const char *VertexShaderSource="#version 330 core \n"
 "TexCoord=aTexCoord; \n"
 "}";
 
-static const char *FragmentShaderSource="#version 330 core \n"
+static const char *LightFragmentShaderSource="#version 330 core \n"
 "out vec4 FragColor; \n"
 "in vec3 ourColor; \n"
 "in vec2 TexCoord; \n"
@@ -50,14 +52,14 @@ static const char *FragmentShaderSource="#version 330 core \n"
 "FragColor=mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2); \n"
 "}";
 
-class TestSquare{
-
+class Light{
+    
 public:
-    TestSquare();
-
+    Light();
+    
     void draw();
 };
 
 
 
-#endif /* TestSquare_hpp */
+#endif /* Light_hpp */
