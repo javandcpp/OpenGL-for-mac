@@ -46,10 +46,20 @@ static const char *LightFragmentShaderSource="#version 330 core \n"
 "out vec4 FragColor; \n"
 "in vec3 ourColor; \n"
 "in vec2 TexCoord; \n"
+"uniform vec3 objectColor; \n"
+"uniform vec3 lightColor; \n"
 "uniform sampler2D texture1; \n"
 "uniform sampler2D texture2; \n"
 "void main(){ \n"
-"FragColor=mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2); \n"
+//"FragColor=mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2); \n"
+"FragColor = vec4(1.0); \n"
+"}";
+
+
+static const char *LightFragmentShaderSource2="#version 330 core \n"
+"out vec4 FragColor; \n"
+"void main(){ \n"
+"FragColor = vec4(1.0); \n"
 "}";
 
 class Light{

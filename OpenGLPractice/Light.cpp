@@ -65,11 +65,24 @@ void Light::draw(){
         cout<<"glcompile fragment shader error:"<<logInfo<<endl;
         return;
     }
+    
+    
+    GLuint fragmentShader2;
+    fragmentShader2=glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragmentShader2,1,&LightFragmentShaderSource2,NULL);
+    glCompileShader(fragmentShader2);
+    glGetShaderiv(fragmentShader2,GL_COMPILE_STATUS,&success);
+    if (!success) {
+        glGetShaderInfoLog(fragmentShader2,512,0,logInfo);
+        cout<<"glcompile fragment shader2 error:"<<logInfo<<endl;
+        return;
+    }
 
     GLuint program;
     program=glCreateProgram();
     glAttachShader(program,vertexShader);
     glAttachShader(program,fragmentShader);
+   // glAttachShader(program,fragmentShader2);
     glLinkProgram(program);
 
     glGetProgramiv(program,GL_COMPILE_STATUS,&success);
@@ -177,84 +190,90 @@ void Light::draw(){
     //
     glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),vertices,GL_STATIC_DRAW);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(index),index,GL_STATIC_DRAW);
-    //顶点
+//    //顶点
     glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,5*sizeof(float),(void*)0);
     glEnableVertexAttribArray(0);
-    //颜色
-    //    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,8*sizeof(float),(void*)(3*sizeof(float)));
-    //    glEnableVertexAttribArray(1);
-    //纹理坐标顶点数据
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(2);
+//    //颜色
+//        glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,8*sizeof(float),(void*)(3*sizeof(float)));
+//        glEnableVertexAttribArray(1);
+//    //纹理坐标顶点数据
+//    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+//    glEnableVertexAttribArray(2);
+    
 
-
-
-
+//    unsigned int lightVAO;
+//    glGenVertexArrays(1, &lightVAO);
+//    glBindVertexArray(lightVAO);
+    // 只需要绑定VBO不用再次设置VBO的数据，因为箱子的VBO数据中已经包含了正确的立方体顶点数据
+//    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    // 设置灯立方体的顶点属性（对我们的灯来说仅仅只有位置数据）
+//    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+//    glEnableVertexAttribArray(0);
 
 
     //加载、创建纹理
     //nrChannels表示通道数，R/G/B/A，一共4个通道，有些图片只有3个，A即为alpha
-    int width,height,nrChannels;
-
-    //纹理1
-    unsigned int texture1;
-    //生成纹理
-    glGenTextures(1, &texture1);
-    //绑定纹理
-    glBindTexture(GL_TEXTURE_2D, texture1);
-    //生成纹理
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-
-
-    stbi_set_flip_vertically_on_load(true); //解决图像翻转问题，不需要像SOIL库中片段着色器的position设置为-y
-    unsigned char *data =stbi_load("container.jpg", &width, &height, &nrChannels, 0);
-    printf("stbi_load   width:%d  height:%d \n",width,height);
-
-    if (data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-
-    }else{
-        cout<<"Failed load texture1"<<endl;
-    }
-
-    stbi_image_free(data);
-
-    //纹理2
-    unsigned int texture2;
-    //生成纹理
-    glGenTextures(1, &texture2);
-    //绑定纹理
-    glBindTexture(GL_TEXTURE_2D, texture2);
-    //生成纹理
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    //加载、创建纹理
-    data =stbi_load("awesomeface.png", &width, &height, &nrChannels,0);
-    printf("stbi_load   width:%d  height:%d \n",width,height);
-    if (data) {
-        if(nrChannels==3)//rgb 适用于jpg图像
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);//png
-        else if(nrChannels==4)//rgba 适用于png图像
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);//png
-
-        glGenerateMipmap(GL_TEXTURE_2D);
-
-    }else{
-        cout<<"Failed load texture2"<<endl;
-    }
-    stbi_image_free(data);
-
-    glUseProgram(program);
-    glUniform1i(glGetUniformLocation(program, "texture1"), 0);
-    glUniform1i(glGetUniformLocation(program, "texture2"),1);
+//    int width,height,nrChannels;
+//
+//    //纹理1
+//    unsigned int texture1;
+//    //生成纹理
+//    glGenTextures(1, &texture1);
+//    //绑定纹理
+//    glBindTexture(GL_TEXTURE_2D, texture1);
+//    //生成纹理
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//
+//
+//
+//    stbi_set_flip_vertically_on_load(true); //解决图像翻转问题，不需要像SOIL库中片段着色器的position设置为-y
+//    unsigned char *data =stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+//    printf("stbi_load   width:%d  height:%d \n",width,height);
+//
+//    if (data) {
+//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+//        glGenerateMipmap(GL_TEXTURE_2D);
+//
+//    }else{
+//        cout<<"Failed load texture1"<<endl;
+//    }
+//
+//    stbi_image_free(data);
+//
+//    //纹理2
+//    unsigned int texture2;
+//    //生成纹理
+//    glGenTextures(1, &texture2);
+//    //绑定纹理
+//    glBindTexture(GL_TEXTURE_2D, texture2);
+//    //生成纹理
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+//    //加载、创建纹理
+//    data =stbi_load("awesomeface.png", &width, &height, &nrChannels,0);
+//    printf("stbi_load   width:%d  height:%d \n",width,height);
+//    if (data) {
+//        if(nrChannels==3)//rgb 适用于jpg图像
+//            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);//png
+//        else if(nrChannels==4)//rgba 适用于png图像
+//            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);//png
+//
+//        glGenerateMipmap(GL_TEXTURE_2D);
+//
+//    }else{
+//        cout<<"Failed load texture2"<<endl;
+//    }
+//    stbi_image_free(data);
+//
+//    glUseProgram(program);
+//    glUniform1i(glGetUniformLocation(program, "texture1"), 0);
+//    glUniform1i(glGetUniformLocation(program, "texture2"),1);
 
 
 
@@ -286,15 +305,7 @@ void Light::draw(){
         //变换
 
         //模型、观察、透视
-        glm::mat4 model=glm::mat4(1.0f);
-        //        model=glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f,0.0f,0.0f));//绕x轴旋转
-        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 1.0f));
-
-        glm::mat4 view=glm::mat4(1.0f);
-        view=glm::translate(view, glm::vec3(0.0f,0.0f,-3.0f));
-
-        glm::mat4 projection=glm::mat4(1.0f);
-        projection=glm::perspective(glm::radians(45.0f), 400.0f/400.0f,0.1f, 100.0f);
+        
 
 
 
@@ -320,47 +331,71 @@ void Light::draw(){
         //            cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
         //
         //       view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+        
+       
 
-        GLint modelLoc=glGetUniformLocation(program,"model");
-        glUniformMatrix4fv(modelLoc,1,GL_FALSE,glm::value_ptr(model));
+        
 
-        GLint viewLoc=glGetUniformLocation(program,"view");
-        glUniformMatrix4fv(viewLoc,1,GL_FALSE,glm::value_ptr(view));
-
-        GLint projectionLoc=glGetUniformLocation(program,"projection");
-        glUniformMatrix4fv(projectionLoc,1,GL_FALSE,glm::value_ptr(projection));
-
-
+//        glActiveTexture(GL_TEXTURE0);
+//        glBindTexture(GL_TEXTURE_2D, texture1);
+//        glActiveTexture(GL_TEXTURE1);
+//        glBindTexture(GL_TEXTURE_2D, texture2);
 
 
-
-
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
-
-        glUseProgram(program);
-        glBindVertexArray(VAO);
+        
+       
+        
+//        glBindVertexArray(lightVAO);
         //        glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
-        for(unsigned int i = 0; i < 10; i++)
+        
+        for(unsigned int i = 0; i < 2; i++)
         {
             glm::mat4 model=glm::mat4(1.0f);
-            model = glm::translate(model, cubePositions[i]);
-            float angle = 20.0f * i;
-            if(i==0||i%3==0){
-                model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f)+i, glm::vec3(1.0f, 0.3f, 0.5f));
+        
+          
+            if(i==0){
+                glBindVertexArray(VAO);
+                glm::mat4 model=glm::mat4(1.0f);
+                
+                glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+                model = glm::translate(model, lightPos);
+                model = glm::scale(model, glm::vec3(0.2f));
+                
+                glm::mat4 view=glm::mat4(1.0f);
+                view=glm::translate(view, glm::vec3(0.0f,0.0f,-3.0f));
+                
+                glm::mat4 projection=glm::mat4(1.0f);
+                projection=glm::perspective(glm::radians(45.0f), 400.0f/400.0f,0.1f, 100.0f);
+                
+                glUseProgram(program);
+                
+                GLint modelLoc=glGetUniformLocation(program,"model");
+                glUniformMatrix4fv(modelLoc,1,GL_FALSE,glm::value_ptr(model));
+                
+                GLint viewLoc=glGetUniformLocation(program,"view");
+                glUniformMatrix4fv(viewLoc,1,GL_FALSE,glm::value_ptr(view));
+                
+                GLint projectionLoc=glGetUniformLocation(program,"projection");
+                glUniformMatrix4fv(projectionLoc,1,GL_FALSE,glm::value_ptr(projection));
+                
+//                GLint objectColorLoc=glGetUniformLocation(program,"objectColor");
+//                glUniform3f(objectColorLoc,1.0f,0.5f,0.31f);
+//
+//                GLint lightColorLoc=glGetUniformLocation(program,"lightColor");
+//                glUniform3f(lightColorLoc,1.0f, 1.0f, 1.0f);
+                
+               
             }else{
-                model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+               
             }
 
-            GLint modelLoc=glGetUniformLocation(program,"model");
-            glUniformMatrix4fv(modelLoc,1,GL_FALSE,glm::value_ptr(model));
-
+//            GLint modelLoc=glGetUniformLocation(program,"model");
+//            glUniformMatrix4fv(modelLoc,1,GL_FALSE,glm::value_ptr(model));
             glDrawArrays(GL_TRIANGLES, 0, 36);
+       
         }
         //        glDrawArrays(GL_TRIANGLES, 0, 36);
-        glBindVertexArray(0);
+          glBindVertexArray(0);
 
         if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
             glfwSetWindowShouldClose(window, true);
